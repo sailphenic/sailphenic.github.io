@@ -1,0 +1,1538 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>精选无人www_无人零售与无人配送观察_无人店与自动配送站点</title>
+<meta name="description" content="精选无人www聚焦无人零售、无人配送与自动化商业场景，提供无人便利店案例、自动配送站点、无人仓储观察、设备选型对比与运营数据解读，适合门店经营者、投资人和技术从业者阅读。">
+<meta name="keywords" content="无人便利店,自动配送站点,无人零售案例,无人仓储,自助售货设备">
+<style>
+:root{
+  --ink:#101a24;
+  --ink-2:#2a3a48;
+  --ink-3:#5b6b7a;
+  --line:#dbe3ea;
+  --line-2:#eaf0f5;
+  --bg:#f5f8fa;
+  --panel:#ffffff;
+  --brand:#0b6b63;
+  --brand-2:#0e8a7e;
+  --brand-soft:#e3f3f1;
+  --accent:#e2653a;
+  --accent-soft:#fdece5;
+  --gold:#b8862b;
+  --radius-s:6px;
+  --radius-m:10px;
+  --radius-l:16px;
+  --shadow-s:0 1px 2px rgba(16,26,36,.06);
+  --shadow-m:0 4px 16px rgba(16,26,36,.08);
+  --shadow-l:0 12px 32px rgba(16,26,36,.12);
+  --sticky-h:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  font-size:15px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700;letter-spacing:.01em}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--brand-2);outline-offset:2px;border-radius:4px}
+
+/* ---------- 吸顶公告条 + 页头 ---------- */
+.sticky-shell{
+  position:sticky;top:0;z-index:60;
+  background:#fff;
+  box-shadow:var(--shadow-s);
+}
+.notice{
+  background:linear-gradient(90deg,#0b6b63,#0e8a7e 60%,#12a191);
+  color:#eafaf7;
+  font-size:13px;
+}
+.notice-in{
+  max-width:1360px;margin:0 auto;padding:7px 24px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.notice-badge{
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:99px;padding:1px 10px;font-size:12px;font-weight:600;white-space:nowrap;
+}
+.notice-txt{flex:1 1 320px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.notice-txt strong{color:#fff}
+.notice-link{white-space:nowrap;font-weight:600;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:1px}
+.notice-link:hover{color:#fff}
+
+.site-head{background:#fff;border-bottom:1px solid var(--line)}
+.head-in{
+  max-width:1360px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:26px;height:66px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand-mark{width:36px;height:36px;flex:0 0 auto}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:.02em;white-space:nowrap}
+.brand-name em{font-style:normal;color:var(--brand)}
+.head-nav{display:flex;align-items:center;gap:4px;flex:1 1 auto;min-width:0;overflow:hidden}
+.head-nav a{
+  font-size:14px;color:var(--ink-2);padding:6px 11px;border-radius:var(--radius-s);
+  white-space:nowrap;transition:.15s;
+}
+.head-nav a:hover{background:var(--brand-soft);color:var(--brand)}
+.head-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.search-box{
+  display:flex;align-items:center;gap:6px;background:var(--bg);
+  border:1px solid var(--line);border-radius:99px;padding:4px 6px 4px 12px;
+}
+.search-box svg{flex:0 0 auto;color:var(--ink-3)}
+.search-box input{
+  border:0;background:transparent;outline:none;font-size:13px;width:132px;color:var(--ink);
+}
+.search-box input::placeholder{color:#9aa8b4}
+.search-box button{
+  border:0;background:var(--brand);color:#fff;font-size:12px;font-weight:600;
+  border-radius:99px;padding:5px 12px;
+}
+.search-box button:hover{background:var(--brand-2)}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--brand);color:#fff;font-size:13.5px;font-weight:600;
+  padding:8px 16px;border-radius:99px;border:1px solid var(--brand);
+  transition:.15s;white-space:nowrap;
+}
+.btn-primary:hover{background:var(--brand-2);border-color:var(--brand-2)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#fff;color:var(--brand);font-size:13.5px;font-weight:600;
+  padding:8px 16px;border-radius:99px;border:1px solid var(--brand);
+  transition:.15s;white-space:nowrap;
+}
+.btn-ghost:hover{background:var(--brand-soft)}
+
+.mobile-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;font-size:13px;color:var(--ink-2)}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1000px 420px at 82% -10%, rgba(14,138,126,.16), transparent 70%),
+    radial-gradient(760px 360px at 6% 110%, rgba(226,101,58,.10), transparent 68%),
+    linear-gradient(180deg,#ffffff 0%, #f0f6f7 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-in{
+  max-width:1360px;margin:0 auto;padding:46px 24px 40px;
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:44px;align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--brand-soft);color:var(--brand);
+  font-size:12.5px;font-weight:700;letter-spacing:.06em;
+  padding:5px 12px;border-radius:99px;margin-bottom:18px;
+}
+.hero-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--brand-2);display:block}
+.hero h1{
+  font-size:clamp(30px,4.1vw,46px);
+  letter-spacing:.02em;line-height:1.16;margin-bottom:16px;
+}
+.hero h1 span{color:var(--brand)}
+.hero-lead{font-size:16px;color:var(--ink-2);max-width:560px;margin-bottom:14px}
+.hero-sub{font-size:13.5px;color:var(--ink-3);max-width:560px;margin-bottom:24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:26px}
+.hero-stats div{min-width:96px}
+.hero-stats b{display:block;font-size:22px;font-weight:800;color:var(--brand);letter-spacing:.01em}
+.hero-stats small{font-size:12.5px;color:var(--ink-3)}
+
+.hero-visual{position:relative;min-height:330px}
+.hero-card{
+  position:absolute;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius-l);box-shadow:var(--shadow-m);overflow:hidden;
+}
+.hc-main{
+  inset:0 0 40px 20px;
+  display:flex;flex-direction:column;
+}
+.hc-main .hc-top{
+  padding:12px 16px;border-bottom:1px solid var(--line-2);
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:12.5px;color:var(--ink-3);
+}
+.hc-main .hc-top b{color:var(--ink);font-size:13.5px}
+.hc-main .hc-top span{color:var(--brand);font-weight:700}
+.hc-map{flex:1;padding:10px 14px 14px}
+.hc-map svg{width:100%;height:100%;display:block}
+.hc-float{
+  right:-6px;bottom:0;width:220px;padding:13px 15px;z-index:2;
+  border-top:3px solid var(--accent);
+}
+.hc-float .fl-label{font-size:11.5px;color:var(--ink-3);letter-spacing:.05em;margin-bottom:4px}
+.hc-float .fl-title{font-size:14px;font-weight:700;margin-bottom:8px}
+.hc-float .fl-bar{height:6px;background:var(--line-2);border-radius:99px;overflow:hidden;margin-bottom:6px}
+.hc-float .fl-bar i{display:block;height:100%;width:78%;background:linear-gradient(90deg,var(--brand),var(--brand-2));border-radius:99px}
+.hc-float .fl-meta{font-size:11.5px;color:var(--ink-3);display:flex;justify-content:space-between}
+
+/* ---------- 布局骨架 ---------- */
+.layout{
+  max-width:1360px;margin:0 auto;padding:30px 24px 0;
+  display:grid;grid-template-columns:182px minmax(0,1fr) 288px;gap:28px;
+  align-items:start;
+}
+/* 左频道栏 */
+.rail-left{position:sticky;top:calc(var(--sticky-h) + 16px)}
+.rail-block{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);padding:14px;margin-bottom:16px;box-shadow:var(--shadow-s)}
+.rail-title{
+  font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--ink-3);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.chan-list li a{
+  display:flex;align-items:center;justify-content:space-between;gap:6px;
+  font-size:13.5px;color:var(--ink-2);padding:7px 9px;border-radius:var(--radius-s);
+  transition:.14s;
+}
+.chan-list li a:hover{background:var(--brand-soft);color:var(--brand)}
+.chan-list li a b{font-size:11.5px;color:var(--ink-3);font-weight:500}
+.chan-list li a:hover b{color:var(--brand-2)}
+.rail-note{font-size:12.5px;color:var(--ink-3);line-height:1.65}
+.rail-note strong{color:var(--ink)}
+
+/* 主内容 */
+main{min-width:0}
+.section{margin-bottom:38px;scroll-margin-top:calc(var(--sticky-h) + 14px)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.sec-title{font-size:21px;display:flex;align-items:center;gap:10px}
+.sec-title::before{
+  content:"";width:4px;height:20px;border-radius:2px;background:var(--brand);display:block;
+}
+.sec-desc{font-size:13px;color:var(--ink-3);flex:1 1 260px;min-width:0}
+.sec-more{font-size:13px;color:var(--brand);font-weight:600;white-space:nowrap}
+.sec-more:hover{text-decoration:underline}
+
+/* 概览 */
+.overview{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:24px 26px;box-shadow:var(--shadow-s);
+}
+.overview p{font-size:14.5px;color:var(--ink-2);margin-bottom:12px}
+.overview p:last-child{margin-bottom:0}
+.overview .ov-kw{color:var(--brand);font-weight:700}
+
+/* 卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);
+  overflow:hidden;box-shadow:var(--shadow-s);display:flex;flex-direction:column;
+  transition:.18s;
+}
+.card:hover{box-shadow:var(--shadow-m);transform:translateY(-2px);border-color:#c9d8e2}
+.card-thumb{position:relative;aspect-ratio:4/3;background:var(--line-2);overflow:hidden}
+.card-thumb img{width:100%;height:100%;object-fit:cover}
+.card-thumb .tag-abs{
+  position:absolute;top:9px;left:9px;background:rgba(11,107,99,.92);color:#fff;
+  font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;backdrop-filter:blur(2px);
+}
+.card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-title{font-size:14.5px;line-height:1.45}
+.card-note{font-size:12.8px;color:var(--ink-3);line-height:1.62;flex:1}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px}
+.tag{
+  font-size:11.5px;color:var(--ink-2);background:var(--bg);
+  border:1px solid var(--line-2);border-radius:4px;padding:1px 7px;white-space:nowrap;
+}
+.tag.hot{color:var(--accent);background:var(--accent-soft);border-color:#f8d4c6}
+.card-meta{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  font-size:11.8px;color:var(--ink-3);border-top:1px dashed var(--line-2);padding-top:8px;
+}
+.card-meta b{color:var(--brand);font-weight:700}
+.card-meta .score{color:var(--gold);font-weight:700}
+
+/* 动态列表 */
+.update-list{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-l);
+  overflow:hidden;box-shadow:var(--shadow-s);
+}
+.update-list li{
+  display:grid;grid-template-columns:88px minmax(0,1fr) auto;gap:14px;align-items:center;
+  padding:12px 18px;border-bottom:1px solid var(--line-2);
+}
+.update-list li:last-child{border-bottom:0}
+.update-list li:hover{background:#fafcfd}
+.up-time{font-size:12.5px;color:var(--ink-3);white-space:nowrap}
+.up-time.today{color:var(--accent);font-weight:700}
+.up-main{min-width:0}
+.up-name{font-size:14px;font-weight:600;margin-bottom:1px}
+.up-name a:hover{color:var(--brand);text-decoration:underline}
+.up-desc{font-size:12.8px;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-badge{
+  font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:99px;white-space:nowrap;
+  background:var(--brand-soft);color:var(--brand);
+}
+.up-badge.new{background:var(--accent-soft);color:var(--accent)}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:15px 15px 14px;box-shadow:var(--shadow-s);transition:.16s;display:block;
+  border-top:3px solid transparent;
+}
+.cat-item:hover{border-top-color:var(--brand);box-shadow:var(--shadow-m);transform:translateY(-2px)}
+.cat-item b{display:block;font-size:14.5px;margin-bottom:4px}
+.cat-item span{display:block;font-size:12.3px;color:var(--ink-3);line-height:1.55}
+.cat-item i{display:inline-block;margin-top:8px;font-style:normal;font-size:12px;color:var(--brand);font-weight:600}
+
+/* 深度解析 */
+.article-box{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:28px 30px;box-shadow:var(--shadow-s);
+}
+.article-box h3{
+  font-size:17px;margin:26px 0 10px;padding-left:12px;border-left:3px solid var(--brand);
+}
+.article-box h3:first-of-type{margin-top:20px}
+.article-box p{font-size:14.5px;color:var(--ink-2);margin-bottom:12px}
+.article-box ul.bullet{margin:6px 0 14px}
+.article-box ul.bullet li{
+  position:relative;padding-left:18px;font-size:14px;color:var(--ink-2);margin-bottom:7px;
+}
+.article-box ul.bullet li::before{
+  content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;
+  background:var(--brand-2);
+}
+.compare-table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:13.5px}
+.compare-table th,.compare-table td{
+  border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;
+}
+.compare-table th{background:var(--brand-soft);color:var(--brand);font-weight:700;white-space:nowrap}
+.compare-table td{color:var(--ink-2)}
+.quote{
+  background:#f7fbfb;border-left:3px solid var(--brand-2);border-radius:0 var(--radius-s) var(--radius-s) 0;
+  padding:12px 16px;font-size:13.8px;color:var(--ink-2);margin:14px 0;
+}
+.quote b{color:var(--brand)}
+
+/* 体验路径 */
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.step{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:16px 18px;box-shadow:var(--shadow-s);position:relative;
+}
+.step-no{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;
+  font-size:13px;font-weight:700;margin-bottom:9px;
+}
+.step b{display:block;font-size:14.5px;margin-bottom:5px}
+.step p{font-size:13.2px;color:var(--ink-3);line-height:1.65}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);
+  box-shadow:var(--shadow-s);overflow:hidden;
+}
+.faq details[open]{border-color:#bcd8d4;box-shadow:var(--shadow-m)}
+.faq summary{
+  cursor:pointer;padding:14px 18px;font-size:14.5px;font-weight:600;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";font-size:19px;font-weight:400;color:var(--brand);line-height:1;flex:0 0 auto;
+}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{background:#fafcfd}
+.faq .ans{padding:0 18px 15px;font-size:13.8px;color:var(--ink-2);line-height:1.75}
+.faq .ans p{margin-bottom:8px}
+.faq .ans p:last-child{margin-bottom:0}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.comment{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:14px 16px;box-shadow:var(--shadow-s);
+}
+.cm-head{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.avatar{
+  width:30px;height:30px;border-radius:50%;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12.5px;font-weight:700;color:#fff;letter-spacing:.02em;
+}
+.cm-name{font-size:13.2px;font-weight:600}
+.cm-meta{font-size:11.5px;color:var(--ink-3)}
+.cm-body{font-size:13.2px;color:var(--ink-2);line-height:1.66}
+.cm-body b{color:var(--brand);font-weight:600}
+.cm-foot{font-size:11.5px;color:var(--ink-3);margin-top:8px;display:flex;gap:14px}
+
+/* 资讯 */
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.news{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);
+  overflow:hidden;box-shadow:var(--shadow-s);display:flex;flex-direction:column;
+  transition:.16s;
+}
+.news:hover{box-shadow:var(--shadow-m);border-color:#c9d8e2}
+.news img{width:100%;height:150px;object-fit:cover;background:var(--line-2)}
+.news-b{padding:13px 15px 15px;display:flex;flex-direction:column;gap:6px;flex:1}
+.news-date{font-size:11.8px;color:var(--brand);font-weight:600;letter-spacing:.02em}
+.news-t{font-size:14px;line-height:1.45}
+.news-s{font-size:12.6px;color:var(--ink-3);line-height:1.6;flex:1}
+
+/* 相关推荐标签索引 */
+.tag-index{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:20px 22px;box-shadow:var(--shadow-s);
+}
+.tag-index .ti-group{margin-bottom:16px}
+.tag-index .ti-group:last-child{margin-bottom:0}
+.ti-label{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--ink-3);margin-bottom:9px}
+.ti-tags{display:flex;flex-wrap:wrap;gap:8px}
+.ti-tags a{
+  font-size:13px;background:var(--bg);border:1px solid var(--line);
+  border-radius:99px;padding:5px 14px;color:var(--ink-2);transition:.14s;
+}
+.ti-tags a:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+
+/* 榜单 */
+.rank-box{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-l);
+  overflow:hidden;box-shadow:var(--shadow-s);
+}
+.rank-box li{
+  display:grid;grid-template-columns:30px minmax(0,1fr) 78px;gap:12px;align-items:center;
+  padding:11px 18px;border-bottom:1px solid var(--line-2);
+}
+.rank-box li:last-child{border-bottom:0}
+.rank-no{
+  width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-size:12.5px;font-weight:700;background:var(--bg);color:var(--ink-3);
+}
+.rank-box li:nth-child(1) .rank-no{background:#0b6b63;color:#fff}
+.rank-box li:nth-child(2) .rank-no{background:#0e8a7e;color:#fff}
+.rank-box li:nth-child(3) .rank-no{background:#12a191;color:#fff}
+.rk-main{min-width:0}
+.rk-name{font-size:13.8px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rk-sub{font-size:11.8px;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rk-bar{height:6px;background:var(--line-2);border-radius:99px;overflow:hidden}
+.rk-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-2));border-radius:99px}
+
+/* 右辅助栏 */
+.rail-right{position:sticky;top:calc(var(--sticky-h) + 16px);display:flex;flex-direction:column;gap:16px}
+.side-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:16px;box-shadow:var(--shadow-s);
+}
+.side-title{font-size:14.5px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.side-title::before{content:"";width:3px;height:15px;border-radius:2px;background:var(--accent);display:block}
+.hot-list li{
+  display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line-2);align-items:flex-start;
+}
+.hot-list li:last-child{border-bottom:0;padding-bottom:0}
+.hot-num{
+  font-size:12px;font-weight:800;color:var(--ink-3);width:16px;flex:0 0 auto;line-height:1.6;
+}
+.hot-list li:nth-child(-n+3) .hot-num{color:var(--accent)}
+.hot-a{font-size:13.2px;line-height:1.5;flex:1;min-width:0}
+.hot-a:hover{color:var(--brand)}
+.hot-a small{display:block;font-size:11.5px;color:var(--ink-3);margin-top:1px}
+.side-dir li a{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:13px;padding:6px 0;color:var(--ink-2);border-bottom:1px dashed var(--line-2);
+}
+.side-dir li:last-child a{border-bottom:0}
+.side-dir li a:hover{color:var(--brand)}
+.side-dir span{font-size:11.5px;color:var(--ink-3)}
+.side-cta{
+  background:linear-gradient(160deg,#0b6b63,#0e8a7e);
+  color:#eafaf7;border-radius:var(--radius-m);padding:18px;box-shadow:var(--shadow-m);
+}
+.side-cta b{display:block;font-size:15px;margin-bottom:6px;color:#fff}
+.side-cta p{font-size:12.6px;line-height:1.65;margin-bottom:12px;color:#cdeee9}
+.side-cta .btn-primary{background:#fff;color:var(--brand);border-color:#fff}
+.side-cta .btn-primary:hover{background:#eafaf7}
+
+/* 搜索结果提示 */
+.search-result{
+  display:none;background:var(--accent-soft);border:1px solid #f8d4c6;color:#8a3a1c;
+  border-radius:var(--radius-m);padding:11px 16px;font-size:13.5px;margin-bottom:20px;
+}
+.search-result.show{display:block}
+.search-result b{color:#a03d17}
+
+/* ---------- 页尾 ---------- */
+.site-foot{
+  margin-top:44px;background:#0f1e26;color:#b9c9d3;font-size:13.2px;
+}
+.foot-in{max-width:1360px;margin:0 auto;padding:40px 24px 26px}
+.foot-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;color:#fff}
+.foot-brand .brand-mark{width:32px;height:32px}
+.foot-brand b{font-size:17px;letter-spacing:.02em}
+.foot-desc{font-size:12.8px;line-height:1.75;color:#93a7b3;max-width:300px}
+.foot-col h4{font-size:13px;color:#fff;margin-bottom:11px;letter-spacing:.04em}
+.foot-col li{margin-bottom:7px}
+.foot-col a{font-size:12.8px;color:#93a7b3;transition:.14s}
+.foot-col a:hover{color:#5fd4c6}
+.foot-bottom{
+  border-top:1px solid #1e333d;padding-top:18px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12.2px;color:#7a8f9c;
+}
+.foot-bottom .fb-links{display:flex;gap:16px;flex-wrap:wrap}
+.foot-bottom a:hover{color:#5fd4c6}
+.foot-note{font-size:12px;color:#6f8592;line-height:1.7;margin-top:10px}
+
+@media (max-width:1180px){
+  .head-nav a{padding:6px 8px;font-size:13px}
+  .layout{grid-template-columns:170px minmax(0,1fr) 260px;gap:22px}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:1024px){
+  :root{--sticky-h:100px}
+  .hero-in{grid-template-columns:1fr;gap:30px;padding:36px 24px 32px}
+  .hero-visual{min-height:290px;max-width:560px}
+  .layout{grid-template-columns:minmax(0,1fr) 268px;gap:22px}
+  .rail-left{
+    position:static;grid-column:1 / -1;margin-bottom:4px;
+  }
+  .rail-left .rail-block{margin-bottom:0}
+  .chan-list{display:flex;flex-wrap:wrap;gap:6px}
+  .chan-list li a{border:1px solid var(--line);padding:5px 11px;font-size:13px}
+  .head-nav{display:none}
+  .mobile-toggle{display:inline-block}
+  .head-nav.open{
+    display:flex;position:absolute;left:0;right:0;top:100%;
+    background:#fff;border-bottom:1px solid var(--line);padding:10px 20px;
+    flex-wrap:wrap;box-shadow:var(--shadow-m);
+  }
+  .head-in{position:relative}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:740px){
+  :root{--sticky-h:96px}
+  body{font-size:14.5px}
+  .notice-in{padding:6px 16px;font-size:12.3px}
+  .notice-link{display:none}
+  .head-in{padding:0 16px;height:58px;gap:12px}
+  .brand-name{font-size:17px}
+  .brand-mark{width:32px;height:32px}
+  .head-tools .btn-primary{display:none}
+  .search-box input{width:96px}
+  .layout{grid-template-columns:1fr;padding:22px 16px 0;gap:22px}
+  .rail-right{position:static}
+  .hero-in{padding:28px 16px 26px}
+  .hero-stats{gap:18px}
+  .hero-stats div{min-width:80px}
+  .hero-visual{min-height:250px}
+  .hc-main{inset:0 0 56px 8px}
+  .hc-float{width:190px;right:0}
+  .card-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .comment-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
+  .update-list li{grid-template-columns:76px minmax(0,1fr);gap:10px;padding:11px 14px}
+  .up-badge{display:none}
+  .article-box{padding:20px 18px}
+  .compare-table{font-size:12.6px}
+  .compare-table th,.compare-table td{padding:7px 9px}
+  .foot-top{grid-template-columns:1fr;gap:22px}
+  .foot-in{padding:30px 16px 22px}
+  .sec-title{font-size:19px}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<div class="sticky-shell">
+  <div class="notice">
+    <div class="notice-in">
+      <span class="notice-badge">今日更新</span>
+      <span class="notice-txt">11 月 25 日新增 <strong>9 条</strong> 无人零售与自动配送条目：无人便利店夜间运营数据、园区配送机器人调度方案、无人仓拣选效率对比</span>
+      <a class="notice-link" href="/#updates">查看更新记录 →</a>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="head-in">
+      <a class="brand" href="/#top" aria-label="精选无人www 首页">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="精选无人www 图形标志">
+          <rect x="1.5" y="1.5" width="37" height="37" rx="11" fill="#0b6b63"/>
+          <path d="M11 26.5V17.2c0-1.5 1.2-2.7 2.7-2.7h12.6c1.5 0 2.7 1.2 2.7 2.7v9.3" stroke="#8fe3d6" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <rect x="14.5" y="18.5" width="11" height="8" rx="1.6" fill="#eafaf7"/>
+          <circle cx="17.6" cy="22.5" r="1.15" fill="#0b6b63"/>
+          <circle cx="22.4" cy="22.5" r="1.15" fill="#0b6b63"/>
+          <path d="M17.4 25.4h5.2" stroke="#0e8a7e" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="20" cy="10.6" r="2.3" fill="#e2653a"/>
+        </svg>
+        <span class="brand-name">精选无人<em>www</em></span>
+      </a>
+
+      <nav class="head-nav" id="headNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选条目</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#cats">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验路径</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#rank">热度榜单</a>
+      </nav>
+
+      <div class="head-tools">
+        <div class="search-box">
+          <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M10.4 10.4L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input id="searchInput" type="search" placeholder="搜索条目 / 分类" aria-label="站内搜索条目与分类">
+          <button type="button" id="searchBtn">查找</button>
+        </div>
+        <a class="btn-primary" href="/#picks">进入精选</a>
+        <button class="mobile-toggle" id="navToggle" aria-expanded="false" aria-controls="headNav">菜单</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-in">
+    <div>
+      <span class="hero-eyebrow"><i></i> 无人零售 · 自动配送 · 无人仓</span>
+      <h1>精选无人<span>www</span></h1>
+      <p class="hero-lead">把无人便利店、自动配送站点、无人仓储与自助设备的真实运营条目整理成可对照的清单：单店数据、设备选型、调度规则与投入回收周期，逐条可查。</p>
+      <p class="hero-sub">面向门店经营者、园区运营方、设备采购与投资评估者。每条内容标注类型、时效与关键指标，方便横向比较而不是只看宣传页。</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#picks">浏览精选条目</a>
+        <a class="btn-ghost" href="/#deep">看选型对比</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>1,286</b><small>收录条目</small></div>
+        <div><b>42</b><small>无人店案例</small></div>
+        <div><b>17</b><small>配送站点样本</small></div>
+        <div><b>11-25</b><small>最近更新</small></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card hc-main">
+        <div class="hc-top">
+          <b>园区无人配送调度视图</b>
+          <span>实时 6 台在线</span>
+        </div>
+        <div class="hc-map">
+          <svg viewBox="0 0 420 220" role="img" aria-label="园区无人配送路线示意图">
+            <defs>
+              <linearGradient id="gLine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#0e8a7e"/><stop offset="1" stop-color="#12a191"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="420" height="220" fill="#f7fbfb" rx="8"/>
+            <g stroke="#dfeae8" stroke-width="1">
+              <path d="M0 55H420M0 110H420M0 165H420M105 0V220M210 0V220M315 0V220"/>
+            </g>
+            <rect x="24" y="22" width="62" height="34" rx="4" fill="#e3f3f1"/>
+            <rect x="24" y="22" width="62" height="34" rx="4" fill="none" stroke="#bcd8d4"/>
+            <rect x="130" y="78" width="66" height="34" rx="4" fill="#eaf0f5"/>
+            <rect x="130" y="78" width="66" height="34" rx="4" fill="none" stroke="#d6e2ea"/>
+            <rect x="248" y="30" width="58" height="32" rx="4" fill="#fdece5"/>
+            <rect x="248" y="30" width="58" height="32" rx="4" fill="none" stroke="#f6d2c2"/>
+            <rect x="330" y="120" width="64" height="34" rx="4" fill="#e3f3f1"/>
+            <rect x="330" y="120" width="64" height="34" rx="4" fill="none" stroke="#bcd8d4"/>
+            <path d="M55 39 C120 39 120 95 163 95 C210 95 220 60 277 46" stroke="url(#gLine)" stroke-width="2.2" fill="none" stroke-dasharray="6 5" stroke-linecap="round"/>
+            <path d="M163 95 C230 95 250 137 362 137" stroke="#e2653a" stroke-width="2" fill="none" stroke-dasharray="5 5" stroke-linecap="round" opacity=".75"/>
+            <circle cx="55" cy="39" r="5" fill="#0b6b63"/>
+            <circle cx="163" cy="95" r="5" fill="#0e8a7e"/>
+            <circle cx="277" cy="46" r="5" fill="#e2653a"/>
+            <circle cx="362" cy="137" r="5" fill="#0b6b63"/>
+            <g font-size="9.5" font-family="sans-serif" fill="#5b6b7a">
+              <text x="30" y="15">A 栋无人店</text>
+              <text x="130" y="72">B 栋站点</text>
+              <text x="252" y="24">C 栋门店</text>
+              <text x="334" y="114">D 栋仓配</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-card hc-float">
+        <div class="fl-label">样本条目 · 无人便利店</div>
+        <div class="fl-title">夜间无人值守单店</div>
+        <div class="fl-bar"><i></i></div>
+        <div class="fl-meta"><span>夜间转化率</span><b>78%</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+
+  <!-- 左频道栏 -->
+  <aside class="rail-left" aria-label="频道索引">
+    <div class="rail-block">
+      <div class="rail-title">频道索引</div>
+      <ul class="chan-list">
+        <li><a href="/#cats">无人便利店 <b>328</b></a></li>
+        <li><a href="/#cats">自动配送站点 <b>196</b></a></li>
+        <li><a href="/#cats">无人仓储 <b>174</b></a></li>
+        <li><a href="/#cats">自助售货设备 <b>152</b></a></li>
+        <li><a href="/#cats">无人咖啡与餐饮 <b>118</b></a></li>
+        <li><a href="/#cats">无人值守停车 <b>96</b></a></li>
+        <li><a href="/#cats">设备选型对比 <b>88</b></a></li>
+        <li><a href="/#cats">运营数据与回收 <b>134</b></a></li>
+      </ul>
+    </div>
+    <div class="rail-block">
+      <div class="rail-title">本周观察</div>
+      <p class="rail-note"><strong>夜间无人店</strong>回本周期普遍压缩到 14 个月以内，但选址与补货频次的差异仍是主要风险点。详见 <a href="/#deep" style="color:var(--brand);font-weight:600">深度解析</a>。</p>
+    </div>
+  </aside>
+
+  <!-- 主内容 -->
+  <main>
+
+    <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+
+    <!-- 1 领域概览 -->
+    <section class="section" id="overview">
+      <div class="sec-head">
+        <h2 class="sec-title">精选无人www 领域概览</h2>
+      </div>
+      <div class="overview">
+        <p>“无人”在这里指去掉现场值守环节的商业形态，主要由三条线构成：一是以无人便利店、无人货柜、自助售货设备为代表的<strong>零售终端</strong>；二是以园区自动配送车、楼宇配送机器人为代表的<strong>末端履约</strong>；三是以无人仓、自动分拣线为代表的<strong>后端仓储</strong>。三者共享同一套底层能力——身份识别、自动结算、远程监控与异常回传，但投入结构、回本周期与失败原因完全不同。</p>
+        <p>当前值得关注的方向有三个。<strong>夜间无人值守门店</strong>在社区与园区场景快速铺开，核心指标从“坪效”转向“夜间时段转化率”和“单店补货次数”；<strong>自动配送站点</strong>从校园扩展到产业园区和写字楼，考核重点变成单均成本与电梯协同；<strong>无人仓</strong>则进入拣选效率与错误率的精细化对比阶段，AGV 与料箱机器人两条路线各有适用边界。</p>
+        <p>精选无人www 收录的条目均带类型标签、更新日期和可对照的关键指标。判断一个无人项目值不值得跟进，通常看四件事：设备折旧年限、现场异常率、远程客服配比、以及是否具备可复制的补货模型。这四项在后面的深度解析与选型对比中会逐条展开。</p>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section" id="picks">
+      <div class="sec-head">
+        <h2 class="sec-title">精选无人条目推荐</h2>
+        <p class="sec-desc">按类型与近期热度排序，每条附关键指标，可直接横向对照。</p>
+        <a class="sec-more" href="/#rank">热度榜单 →</a>
+      </div>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/wuren-bianli48/400/300" width="400" height="300" loading="lazy" alt="社区无人便利店夜间值守门店外观">
+            <span class="tag-abs">无人便利店</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">社区 24 小时无人便利店 · 夜间值守版</h3>
+            <p class="card-note">以门禁 + 自助结算为核心，白天留 1 名店员、夜间全无人。条目记录单店夜间客单价、补货频次与异常报警次数，适合评估社区点位能否支撑夜间时段。</p>
+            <div class="tag-row"><span class="tag">夜间值守</span><span class="tag">社区点位</span><span class="tag hot">近 7 日热</span></div>
+            <div class="card-meta"><span>更新 11-25</span><span><b>热度 9,420</b></span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/peisong-zhandian12/400/300" width="400" height="300" loading="lazy" alt="产业园区自动配送站点取货柜">
+            <span class="tag-abs">自动配送</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">产业园区自动配送站点 · 楼宇接力方案</h3>
+            <p class="card-note">配送车负责园区主干道，楼宇内由机器人接力到层。条目拆解接力点的等待时长、单均成本与电梯占用协调方式，是园区型项目最常见的落地结构。</p>
+            <div class="tag-row"><span class="tag">园区配送</span><span class="tag">楼宇接力</span><span class="tag">单均成本</span></div>
+            <div class="card-meta"><span>更新 11-24</span><span><b>热度 8,760</b></span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/wuren-cangku33/400/300" width="400" height="300" loading="lazy" alt="无人仓料箱机器人拣选区">
+            <span class="tag-abs">无人仓储</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">料箱机器人拣选仓 · 中小件场景实测</h3>
+            <p class="card-note">记录 6,000 个 SKU 规模下的拣选效率、错拣率与换箱耗时，与 AGV 货到人方案并列对照，适合中小件、多批次订单的仓库参考。</p>
+            <div class="tag-row"><span class="tag">料箱机器人</span><span class="tag">拣选效率</span><span class="tag">错拣率</span></div>
+            <div class="card-meta"><span>更新 11-22</span><span><b>热度 7,980</b></span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/zizhu-shouhuo71/400/300" width="400" height="300" loading="lazy" alt="写字楼自助售货设备陈列">
+            <span class="tag-abs">自助设备</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">写字楼自助售货柜 · 冷藏与常温组合</h3>
+            <p class="card-note">对照冷藏柜与常温柜在同一楼层的动销差异，含单柜月租金、耗电与补货路线成本，适合判断写字楼点位该配哪种柜型。</p>
+            <div class="tag-row"><span class="tag">自助售货</span><span class="tag">写字楼</span><span class="tag">动销对比</span></div>
+            <div class="card-meta"><span>更新 11-21</span><span><b class="score">9.1 分</b></span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/wuren-kafei09/400/300" width="400" height="300" loading="lazy" alt="无人咖啡机与自助餐饮终端">
+            <span class="tag-abs">无人餐饮</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">无人咖啡终端 · 园区早高峰出杯测试</h3>
+            <p class="card-note">记录早高峰 90 分钟内的出杯速度、故障停机与清洁维护次数，对比半自动与全自动机型的实际差别，适合餐饮类无人点位选型。</p>
+            <div class="tag-row"><span class="tag">无人咖啡</span><span class="tag">出杯效率</span><span class="tag">维护频次</span></div>
+            <div class="card-meta"><span>更新 11-20</span><span><b>热度 6,540</b></span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/wuren-tingche55/400/300" width="400" height="300" loading="lazy" alt="无人值守停车场出入口识别设备">
+            <span class="tag-abs">无人停车</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">无人值守停车场 · 车牌识别与异常放行</h3>
+            <p class="card-note">重点在异常场景：临时车、无牌车、识别失败的远程处理链路。条目给出远程客服响应配比与逃费率控制方法，适合物业与商业体参考。</p>
+            <div class="tag-row"><span class="tag">车牌识别</span><span class="tag">异常放行</span><span class="tag">逃费率</span></div>
+            <div class="card-meta"><span>更新 11-18</span><span><b>热度 5,870</b></span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/xuanxing-duibi24/400/300" width="400" height="300" loading="lazy" alt="无人零售设备选型对照资料">
+            <span class="tag-abs">选型对比</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">无人便利店设备清单 · 门禁与结算对照</h3>
+            <p class="card-note">把门禁方案、结算方式、监控回传三类设备拆成对照表，列出各自适配的门店面积与客流区间，减少一次性采购的试错成本。</p>
+            <div class="tag-row"><span class="tag">设备清单</span><span class="tag">门禁方案</span><span class="tag">自助结算</span></div>
+            <div class="card-meta"><span>更新 11-17</span><span><b>热度 7,120</b></span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/yunying-huibao67/400/300" width="400" height="300" loading="lazy" alt="无人零售单店运营数据看板">
+            <span class="tag-abs">运营数据</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">无人店回本周期测算 · 三种点位模型</h3>
+            <p class="card-note">社区、写字楼、园区三类点位分列测算，含设备折旧、租金、补货与远程客服四项成本，给出各自的盈亏平衡客流阈值。</p>
+            <div class="tag-row"><span class="tag">回本周期</span><span class="tag">成本结构</span><span class="tag">盈亏平衡</span></div>
+            <div class="card-meta"><span>更新 11-15</span><span><b class="score">8.8 分</b></span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/wuren-xiaofang83/400/300" width="400" height="300" loading="lazy" alt="无人值守门店内部货架与监控">
+            <span class="tag-abs">无人便利店</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">办公楼下无人货柜 · 高频补货模型</h3>
+            <p class="card-note">以 3 天一次补货改为动态补货为切入点，记录缺货率与滞销率的变化，适合单人多柜管理的运营者参考。</p>
+            <div class="tag-row"><span class="tag">动态补货</span><span class="tag">缺货率</span><span class="tag">单人管理</span></div>
+            <div class="card-meta"><span>更新 11-14</span><span><b>热度 6,030</b></span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3 最新动态 -->
+    <section class="section" id="updates">
+      <div class="sec-head">
+        <h2 class="sec-title">最新更新与动态</h2>
+        <p class="sec-desc">条目更新、数据修正与社区讨论焦点，按时间倒序。</p>
+      </div>
+      <ul class="update-list">
+        <li>
+          <span class="up-time today">今天 09:30</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#picks">社区 24 小时无人便利店 · 夜间值守版</a></div>
+            <div class="up-desc">补充 11 月夜间时段转化率与报警次数，夜间客单价上调至 21.4 元。</div>
+          </div>
+          <span class="up-badge new">数据更新</span>
+        </li>
+        <li>
+          <span class="up-time">今天 08:10</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#picks">产业园区自动配送站点 · 楼宇接力方案</a></div>
+            <div class="up-desc">新增电梯占用协调规则说明，接力等待时长由 4.2 分钟降至 3.1 分钟。</div>
+          </div>
+          <span class="up-badge">方案修订</span>
+        </li>
+        <li>
+          <span class="up-time">昨天 21:10</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#rank">无人仓拣选效率榜单</a></div>
+            <div class="up-desc">11 月榜更新，料箱机器人路线在中小件场景反超 AGV 货到人。</div>
+          </div>
+          <span class="up-badge">榜单更新</span>
+        </li>
+        <li>
+          <span class="up-time">昨天 18:40</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#picks">写字楼自助售货柜 · 冷藏与常温组合</a></div>
+            <div class="up-desc">新增同一楼层两种柜型的动销对照数据，补货路线成本单独列出。</div>
+          </div>
+          <span class="up-badge">数据更新</span>
+        </li>
+        <li>
+          <span class="up-time">11 月 23 日</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#deep">无人门店门禁方案对照表</a></div>
+            <div class="up-desc">补充扫码开门与刷脸开门在弱网环境下的失败率对比。</div>
+          </div>
+          <span class="up-badge">内容新增</span>
+        </li>
+        <li>
+          <span class="up-time">11 月 22 日</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#picks">料箱机器人拣选仓 · 中小件场景实测</a></div>
+            <div class="up-desc">错拣率修正为 0.12%，新增换箱耗时分布区间。</div>
+          </div>
+          <span class="up-badge new">数据修正</span>
+        </li>
+        <li>
+          <span class="up-time">11 月 20 日</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#picks">无人咖啡终端 · 园区早高峰出杯测试</a></div>
+            <div class="up-desc">补测冬季低温环境下奶泡稳定性，故障停机次数上升 2 次。</div>
+          </div>
+          <span class="up-badge">测试补充</span>
+        </li>
+        <li>
+          <span class="up-time">11 月 19 日</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#news">无人零售设备采购新规讨论</a></div>
+            <div class="up-desc">社区围绕远程监控留存时长与数据合规要求展开讨论。</div>
+          </div>
+          <span class="up-badge">社区焦点</span>
+        </li>
+        <li>
+          <span class="up-time">11 月 17 日</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#picks">无人便利店设备清单 · 门禁与结算对照</a></div>
+            <div class="up-desc">新增 40 平方米以下小面积门店的适配建议。</div>
+          </div>
+          <span class="up-badge">内容新增</span>
+        </li>
+        <li>
+          <span class="up-time">11 月 15 日</span>
+          <div class="up-main">
+            <div class="up-name"><a href="/#picks">无人店回本周期测算 · 三种点位模型</a></div>
+            <div class="up-desc">按最新设备报价重算折旧部分，园区模型回本周期缩短至 13 个月。</div>
+          </div>
+          <span class="up-badge">数据更新</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="cats">
+      <div class="sec-head">
+        <h2 class="sec-title">按分类浏览</h2>
+        <p class="sec-desc">八个主要类别，点选后可在上方搜索框输入类别名快速筛选条目。</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#picks">
+          <b>无人便利店</b>
+          <span>夜间值守、门禁方案、自助结算与补货模型</span>
+          <i>328 条 →</i>
+        </a>
+        <a class="cat-item" href="/#picks">
+          <b>自动配送站点</b>
+          <span>园区配送、楼宇接力、单均成本与调度规则</span>
+          <i>196 条 →</i>
+        </a>
+        <a class="cat-item" href="/#picks">
+          <b>无人仓储</b>
+          <span>料箱机器人、AGV 货到人、拣选效率与错拣率</span>
+          <i>174 条 →</i>
+        </a>
+        <a class="cat-item" href="/#picks">
+          <b>自助售货设备</b>
+          <span>冷藏柜、常温柜、动销对比与点位租金</span>
+          <i>152 条 →</i>
+        </a>
+        <a class="cat-item" href="/#picks">
+          <b>无人咖啡与餐饮</b>
+          <span>出杯效率、清洁维护、早高峰承载能力</span>
+          <i>118 条 →</i>
+        </a>
+        <a class="cat-item" href="/#picks">
+          <b>无人值守停车</b>
+          <span>车牌识别、异常放行、逃费率与远程客服</span>
+          <i>96 条 →</i>
+        </a>
+        <a class="cat-item" href="/#deep">
+          <b>设备选型对比</b>
+          <span>门禁、结算、监控三类设备的适配区间</span>
+          <i>88 条 →</i>
+        </a>
+        <a class="cat-item" href="/#guide">
+          <b>运营数据与回收</b>
+          <span>成本结构、盈亏平衡、回本周期测算方法</span>
+          <i>134 条 →</i>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="section" id="deep">
+      <div class="sec-head">
+        <h2 class="sec-title">深度解析：无人商业的三条路线怎么选</h2>
+      </div>
+      <div class="article-box">
+        <p>同样叫“无人”，零售终端、末端配送与无人仓的决策逻辑差异极大。把三者混在一起比较，最常见的后果是用零售的坪效思维去评估配送站点，或者用仓储的自动化率去要求一家 60 平方米的社区门店。下面按路线拆开讲。</p>
+
+        <h3>一、无人便利店：决定成败的是补货，不是门禁</h3>
+        <p>无人便利店的技术门槛已经不高，扫码开门、自助结算、远程监控三件套可以标准化采购。真正拉开差距的是补货模型：同样 60 平方米、同样 300 个 SKU，三天一补和动态补货的缺货率能差出 6 到 9 个百分点。选型时先问三个问题：日均客流是否稳定过 180 人次、补货半径是否在 30 分钟内、夜间时段的实际成交占比是否超过 25%。三项里有两项不达标，夜间全无人往往不划算。</p>
+        <ul class="bullet">
+          <li>门禁方案：扫码开门稳定性最好，刷脸开门在弱网环境失败率明显更高，需配兜底密码。</li>
+          <li>结算方式：自助结算台适合客单价 20 元以上，纯扫码购适合低客单高频场景。</li>
+          <li>监控回传：留存时长与清晰度直接影响纠纷处理成本，不要只按最低标准配置。</li>
+        </ul>
+
+        <h3>二、自动配送站点：单均成本与接力点是关键变量</h3>
+        <p>园区配送的账要算到“最后一栋楼”。主干道用配送车效率很高，但一旦进入楼宇，电梯等待、楼层接力、收件人不在场这三件事会把优势吃掉。成熟的方案通常把接力点设在楼宇一层大堂，由室内机器人完成垂直段，配送车只跑循环线路。评估时看两个数字：接力等待时长和单均成本。前者超过 5 分钟，用户体验会明显下滑；后者若高于人工配送的 1.2 倍，项目很难长期维持。</p>
+        <div class="quote">一个常见误区是把配送站点的“在线车辆数”当成效率指标。<b>真正决定成本的是每台车每天完成的订单数</b>，而不是同时在跑多少台。</div>
+
+        <h3>三、无人仓：料箱机器人与 AGV 货到人的边界</h3>
+        <p>两条路线的分界不在仓库面积，而在订单结构。多批次、小批量、SKU 高度分散的中小件场景，料箱机器人优势明显；整箱出入库、单 SKU 体量大的场景，AGV 货到人更稳。下表是按实际项目整理的对照维度，可直接用于初筛。</p>
+        <table class="compare-table">
+          <thead>
+            <tr><th>对照维度</th><th>料箱机器人</th><th>AGV 货到人</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>适配订单结构</td><td>多批次小批量、SKU 分散</td><td>整箱为主、单 SKU 体量大</td></tr>
+            <tr><td>典型拣选效率</td><td>每小时 420—560 行</td><td>每小时 300—420 行</td></tr>
+            <tr><td>错拣率区间</td><td>0.10%—0.15%</td><td>0.15%—0.25%</td></tr>
+            <tr><td>换箱 / 换货耗时</td><td>单次 18—26 秒</td><td>单次 30—45 秒</td></tr>
+            <tr><td>扩容方式</td><td>增加料箱与货架层数</td><td>增加车辆与通道</td></tr>
+            <tr><td>主要风险</td><td>料箱标准化程度不足</td><td>通道拥堵与调度冲突</td></tr>
+          </tbody>
+        </table>
+
+        <h3>四、三个共用判断维度</h3>
+        <p>不管选哪条路线，有三个维度是共通的，也是精选无人www 在收录条目时统一标注的字段。</p>
+        <ul class="bullet">
+          <li><strong>设备折旧年限</strong>：无人设备的实际可用年限通常低于厂商标称，按标称年限的 70% 做测算更稳妥。</li>
+          <li><strong>现场异常率</strong>：包括识别失败、设备停机、人为干预，异常率每上升 1 个百分点，远程客服成本约上升 8%。</li>
+          <li><strong>可复制性</strong>：单点跑通不代表能复制，补货路线、点位谈判和运维半径决定了第二家、第三家的成本曲线。</li>
+        </ul>
+        <p>把这三项与具体路线的关键指标放在一起看，才能判断一个无人项目是“技术演示”还是“能持续运营的生意”。这也是本页后续体验路径与常见问答反复回到的基准。</p>
+      </div>
+    </section>
+
+    <!-- 6 体验路径 -->
+    <section class="section" id="guide">
+      <div class="sec-head">
+        <h2 class="sec-title">内容消费路径与判断顺序</h2>
+        <p class="sec-desc">第一次接触无人商业内容，按这个顺序看，能少走弯路。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-no">1</span>
+          <b>先定路线，再看条目</b>
+          <p>零售终端、末端配送、无人仓的评估指标不通用。先确认自己关心哪条线，再进入对应分类，避免被跨路线的漂亮数据误导。</p>
+        </div>
+        <div class="step">
+          <span class="step-no">2</span>
+          <b>用三个数字初筛</b>
+          <p>看单店或单站点的日均单量、异常率、回本周期。三项中任一项明显偏离同类区间，先标记为待验证，不要直接采信。</p>
+        </div>
+        <div class="step">
+          <span class="step-no">3</span>
+          <b>对照同类条目比差异</b>
+          <p>同类条目至少看三条，重点比较补货频次、远程客服配比与设备折旧口径这三处容易被不同项目用不同方式计算的地方。</p>
+        </div>
+        <div class="step">
+          <span class="step-no">4</span>
+          <b>最后看落地约束</b>
+          <p>点位租期、电力容量、网络稳定性这些“不性感”的条件，往往才是无人项目能不能长期跑下去的决定因素。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq">
+      <div class="sec-head">
+        <h2 class="sec-title">常见问答</h2>
+        <p class="sec-desc">围绕无人零售与自动配送的实际问题。</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>无人便利店的条目一般多久更新一次数据？</summary>
+          <div class="ans">
+            <p>经营类数据通常按月更新，夜间时段转化率、补货频次这类波动大的指标会按周补录。设备与方案类条目变化较慢，一般在方案修订或设备换代时更新。每条内容都标注了具体更新日期，可据此判断数据新鲜度。</p>
+          </div>
+        </details>
+        <details>
+          <summary>无人便利店和自助售货柜有什么区别，该看哪一类？</summary>
+          <div class="ans">
+            <p>无人便利店有完整门店空间，SKU 通常在 200 个以上，需要门禁、结算、监控一整套系统；自助售货柜是单柜或柜组，SKU 少、部署快、租金低。判断依据是点位日均客流：稳定过 180 人次优先考虑门店，低于 100 人次用柜组更稳。</p>
+          </div>
+        </details>
+        <details>
+          <summary>第一次接触无人配送，从哪个条目开始看比较好？</summary>
+          <div class="ans">
+            <p>建议先看园区型自动配送站点，它的场景边界最清晰、变量最少。看完主干道与楼宇接力的分工后，再去看写字楼与校园场景，会更容易理解单均成本为什么差得多。</p>
+          </div>
+        </details>
+        <details>
+          <summary>料箱机器人和 AGV 货到人，评判标准通常是什么？</summary>
+          <div class="ans">
+            <p>主要看三项：每小时拣选行数、错拣率、换箱或换货耗时。中小件、多批次场景料箱机器人通常占优；整箱为主、单 SKU 体量大的场景 AGV 更稳。不要只看峰值效率，要看连续 8 小时的平均值。</p>
+          </div>
+        </details>
+        <details>
+          <summary>无人店的回本周期一般怎么算才靠谱？</summary>
+          <div class="ans">
+            <p>把设备折旧、租金、补货成本、远程客服配比四项拆开算，设备折旧按标称年限的 70% 计。很多测算出问题，是因为把远程客服算成了固定成本，实际它会随异常率上升而增加。</p>
+          </div>
+        </details>
+        <details>
+          <summary>无人值守停车场的逃费率一般控制在什么水平？</summary>
+          <div class="ans">
+            <p>成熟项目通常控制在 1.5% 以内，主要靠异常放行流程和远程客服响应速度。逃费率突然上升，多半是识别设备老化或临时车规则调整导致的，需要先查设备日志再看规则。</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="comments">
+      <div class="sec-head">
+        <h2 class="sec-title">社区评论</h2>
+        <p class="sec-desc">来自门店经营者、园区运营与设备采购者的真实反馈。</p>
+      </div>
+      <div class="comment-grid">
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#0b6b63">林</span>
+            <div><div class="cm-name">林间小铺</div><div class="cm-meta">11-25 · 社区无人店</div></div>
+          </div>
+          <p class="cm-body">按条目里的动态补货模型调整后，缺货率从 9% 降到 4% 左右。夜间全无人这块还在观察，主要担心设备停机没人处理。</p>
+          <div class="cm-foot"><span>有用 32</span><span>回复 6</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#0e8a7e">周</span>
+            <div><div class="cm-name">周工看园区</div><div class="cm-meta">11-25 · 自动配送</div></div>
+          </div>
+          <p class="cm-body">楼宇接力那段写得很实在。我们之前就是卡在电梯等待，接力点改到一层大堂后才顺畅起来，单均成本降了差不多两毛。</p>
+          <div class="cm-foot"><span>有用 27</span><span>回复 4</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#e2653a">陈</span>
+            <div><div class="cm-name">陈皮不加糖</div><div class="cm-meta">11-24 · 自助设备</div></div>
+          </div>
+          <p class="cm-body">冷藏柜和常温柜的动销对比挺有用，但不同楼层差异也很大，建议后续能加上楼层维度的数据。</p>
+          <div class="cm-foot"><span>有用 19</span><span>回复 3</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#b8862b">吴</span>
+            <div><div class="cm-name">吴仓管</div><div class="cm-meta">11-24 · 无人仓储</div></div>
+          </div>
+          <p class="cm-body">料箱机器人那组数据和我们仓库实测接近，错拣率 0.12% 是合理区间。就是换箱耗时对操作规范要求高，新人容易拖慢。</p>
+          <div class="cm-foot"><span>有用 24</span><span>回复 5</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#3d6b8a">郑</span>
+            <div><div class="cm-name">郑在选型</div><div class="cm-meta">11-23 · 设备选型</div></div>
+          </div>
+          <p class="cm-body">门禁对照表帮我避开了一个坑，刷脸开门在弱网下确实容易卡，最后选了扫码加密码兜底的方案。</p>
+          <div class="cm-foot"><span>有用 41</span><span>回复 8</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#0b6b63">何</span>
+            <div><div class="cm-name">何区运营</div><div class="cm-meta">11-23 · 园区配送</div></div>
+          </div>
+          <p class="cm-body">单均成本这块写得比较克制，没有夸大。实际跑下来，收件人不在场才是最大变量，这块希望能单独展开。</p>
+          <div class="cm-foot"><span>有用 16</span><span>回复 2</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#7a5ea8">许</span>
+            <div><div class="cm-name">许小满</div><div class="cm-meta">11-22 · 无人咖啡</div></div>
+          </div>
+          <p class="cm-body">早高峰出杯测试很真实，我们点位冬天奶泡确实不稳，后来加了预热流程才好一些。</p>
+          <div class="cm-foot"><span>有用 13</span><span>回复 1</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#c2573b">马</span>
+            <div><div class="cm-name">马路边观察</div><div class="cm-meta">11-22 · 无人停车</div></div>
+          </div>
+          <p class="cm-body">逃费率 1.5% 以内是合理目标，但我们商业体临时车多，实际在 2% 上下，主要还是识别失败后的处理链路太长。</p>
+          <div class="cm-foot"><span>有用 21</span><span>回复 4</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#0e8a7e">刘</span>
+            <div><div class="cm-name">刘阿朴</div><div class="cm-meta">11-21 · 无人便利店</div></div>
+          </div>
+          <p class="cm-body">回本周期测算按 70% 折旧年限来算更稳，我们第一版就是按标称年限算，结果第二年设备维护费超预算不少。</p>
+          <div class="cm-foot"><span>有用 35</span><span>回复 7</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#2a6b5f">钱</span>
+            <div><div class="cm-name">钱塘点位</div><div class="cm-meta">11-21 · 自助设备</div></div>
+          </div>
+          <p class="cm-body">写字楼点位租金差异太大，条目里的成本区间只能做参考，实际谈下来有的楼层贵一倍。</p>
+          <div class="cm-foot"><span>有用 11</span><span>回复 3</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#8a5b3d">孙</span>
+            <div><div class="cm-name">孙小楼</div><div class="cm-meta">11-20 · 无人仓储</div></div>
+          </div>
+          <p class="cm-body">AGV 通道拥堵那段说到了痛点，扩容不是简单加车，调度算法跟不上反而整体变慢。</p>
+          <div class="cm-foot"><span>有用 18</span><span>回复 2</span></div>
+        </div>
+        <div class="comment">
+          <div class="cm-head">
+            <span class="avatar" style="background:#4a5f8a">韩</span>
+            <div><div class="cm-name">韩式冷柜</div><div class="cm-meta">11-19 · 自助设备</div></div>
+          </div>
+          <p class="cm-body">内容偏经营视角，适合已经入场的人。如果是纯小白，可能还需要先补一下基础概念。</p>
+          <div class="cm-foot"><span>有用 9</span><span>回复 1</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news">
+      <div class="sec-head">
+        <h2 class="sec-title">相关资讯</h2>
+        <p class="sec-desc">近 30 天内无人商业领域的具体动态。</p>
+      </div>
+      <div class="news-grid">
+        <article class="news">
+          <img src="https://picsum.photos/seed/zixun-yejian44/600/400" width="600" height="400" loading="lazy" alt="社区无人便利店夜间运营场景">
+          <div class="news-b">
+            <span class="news-date">2026-11-24</span>
+            <h3 class="news-t">多地社区无人便利店夜间时段延长至 24 小时</h3>
+            <p class="news-s">11 月以来，社区型无人门店夜间营业比例上升，运营方开始把补货窗口调整到凌晨，以减少白天打扰。</p>
+          </div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/zixun-peisong18/600/400" width="600" height="400" loading="lazy" alt="产业园区自动配送车行驶">
+          <div class="news-b">
+            <span class="news-date">2026-11-22</span>
+            <h3 class="news-t">产业园区自动配送新增楼宇接力标准流程</h3>
+            <p class="news-s">多家运营方统一接力点设置在一层大堂，明确电梯占用优先级，接力等待时长普遍缩短。</p>
+          </div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/zixun-cangku26/600/400" width="600" height="400" loading="lazy" alt="无人仓料箱机器人作业区">
+          <div class="news-b">
+            <span class="news-date">2026-11-20</span>
+            <h3 class="news-t">中小件仓库料箱机器人改造项目集中上线</h3>
+            <p class="news-s">11 月中下旬多个中小件仓完成改造，拣选效率提升明显，但料箱标准化成为新瓶颈。</p>
+          </div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/zixun-guiyue35/600/400" width="600" height="400" loading="lazy" alt="无人零售设备远程监控界面">
+          <div class="news-b">
+            <span class="news-date">2026-11-19</span>
+            <h3 class="news-t">无人零售设备远程监控留存时长引发社区讨论</h3>
+            <p class="news-s">围绕监控数据留存与合规要求，运营方与设备商在社区展开讨论，焦点在纠纷处理成本。</p>
+          </div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/zixun-kafei51/600/400" width="600" height="400" loading="lazy" alt="园区无人咖啡终端出杯">
+          <div class="news-b">
+            <span class="news-date">2026-11-17</span>
+            <h3 class="news-t">无人咖啡终端进入冬季维护周期，奶泡稳定性受关注</h3>
+            <p class="news-s">低温环境下出杯稳定性下降，运营方开始增加预热流程与清洁频次，故障停机次数上升。</p>
+          </div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/zixun-tingche62/600/400" width="600" height="400" loading="lazy" alt="无人值守停车场识别设备">
+          <div class="news-b">
+            <span class="news-date">2026-11-14</span>
+            <h3 class="news-t">无人值守停车场临时车规则调整，逃费率短期波动</h3>
+            <p class="news-s">部分商业体调整临时车计费规则后，逃费率出现短期上升，识别设备日志成为排查重点。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section" id="related">
+      <div class="sec-head">
+        <h2 class="sec-title">相关推荐方向</h2>
+        <p class="sec-desc">延伸阅读方向，与热度榜单互补，偏类型与方法。</p>
+      </div>
+      <div class="tag-index">
+        <div class="ti-group">
+          <div class="ti-label">类型方向</div>
+          <div class="ti-tags">
+            <a href="/#picks">夜间无人值守门店</a>
+            <a href="/#picks">无人货柜补货模型</a>
+            <a href="/#picks">园区楼宇接力配送</a>
+            <a href="/#picks">料箱机器人拣选</a>
+            <a href="/#picks">AGV 货到人</a>
+          </div>
+        </div>
+        <div class="ti-group">
+          <div class="ti-label">方法方向</div>
+          <div class="ti-tags">
+            <a href="/#guide">回本周期测算</a>
+            <a href="/#deep">设备折旧口径</a>
+            <a href="/#deep">异常率与客服配比</a>
+            <a href="/#guide">点位日均客流判断</a>
+          </div>
+        </div>
+        <div class="ti-group">
+          <div class="ti-label">场景方向</div>
+          <div class="ti-tags">
+            <a href="/#picks">社区点位</a>
+            <a href="/#picks">写字楼点位</a>
+            <a href="/#picks">产业园区</a>
+            <a href="/#picks">校园配送</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 热度榜单 -->
+    <section class="section" id="rank">
+      <div class="sec-head">
+        <h2 class="sec-title">11 月热度榜单</h2>
+        <p class="sec-desc">按近 7 日阅读与收藏综合排序，数据截至 2026-11-25。</p>
+      </div>
+      <ul class="rank-box">
+        <li>
+          <span class="rank-no">1</span>
+          <div class="rk-main">
+            <div class="rk-name">社区 24 小时无人便利店 · 夜间值守版</div>
+            <div class="rk-sub">无人便利店 · 热度 9,420</div>
+          </div>
+          <div class="rk-bar"><i style="width:96%"></i></div>
+        </li>
+        <li>
+          <span class="rank-no">2</span>
+          <div class="rk-main">
+            <div class="rk-name">产业园区自动配送站点 · 楼宇接力方案</div>
+            <div class="rk-sub">自动配送 · 热度 8,760</div>
+          </div>
+          <div class="rk-bar"><i style="width:89%"></i></div>
+        </li>
+        <li>
+          <span class="rank-no">3</span>
+          <div class="rk-main">
+            <div class="rk-name">料箱机器人拣选仓 · 中小件场景实测</div>
+            <div class="rk-sub">无人仓储 · 热度 7,980</div>
+          </div>
+          <div class="rk-bar"><i style="width:82%"></i></div>
+        </li>
+        <li>
+          <span class="rank-no">4</span>
+          <div class="rk-main">
+            <div class="rk-name">无人便利店设备清单 · 门禁与结算对照</div>
+            <div class="rk-sub">选型对比 · 热度 7,120</div>
+          </div>
+          <div class="rk-bar"><i style="width:74%"></i></div>
+        </li>
+        <li>
+          <span class="rank-no">5</span>
+          <div class="rk-main">
+            <div class="rk-name">写字楼自助售货柜 · 冷藏与常温组合</div>
+            <div class="rk-sub">自助设备 · 热度 6,540</div>
+          </div>
+          <div class="rk-bar"><i style="width:68%"></i></div>
+        </li>
+        <li>
+          <span class="rank-no">6</span>
+          <div class="rk-main">
+            <div class="rk-name">无人店回本周期测算 · 三种点位模型</div>
+            <div class="rk-sub">运营数据 · 热度 6,030</div>
+          </div>
+          <div class="rk-bar"><i style="width:63%"></i></div>
+        </li>
+        <li>
+          <span class="rank-no">7</span>
+          <div class="rk-main">
+            <div class="rk-name">无人值守停车场 · 车牌识别与异常放行</div>
+            <div class="rk-sub">无人停车 · 热度 5,870</div>
+          </div>
+          <div class="rk-bar"><i style="width:58%"></i></div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="rail-right" aria-label="辅助信息">
+    <div class="side-card">
+      <div class="side-title">今日热读</div>
+      <ul class="hot-list">
+        <li><span class="hot-num">1</span><a class="hot-a" href="/#picks">夜间无人值守门店<small>夜间时段转化率 78%</small></a></li>
+        <li><span class="hot-num">2</span><a class="hot-a" href="/#picks">楼宇接力配送<small>接力等待 3.1 分钟</small></a></li>
+        <li><span class="hot-num">3</span><a class="hot-a" href="/#picks">料箱机器人拣选<small>错拣率 0.12%</small></a></li>
+        <li><span class="hot-num">4</span><a class="hot-a" href="/#picks">写字楼自助柜<small>冷藏 vs 常温动销</small></a></li>
+        <li><span class="hot-num">5</span><a class="hot-a" href="/#picks">无人停车异常放行<small>逃费率 1.5% 以内</small></a></li>
+      </ul>
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">栏目直达</div>
+      <ul class="side-dir">
+        <li><a href="/#overview">领域概览 <span>1,286 条</span></a></li>
+        <li><a href="/#picks">精选条目 <span>9 组</span></a></li>
+        <li><a href="/#updates">最新动态 <span>10 条</span></a></li>
+        <li><a href="/#cats">分类入口 <span>8 类</span></a></li>
+        <li><a href="/#deep">深度解析 <span>4 节</span></a></li>
+        <li><a href="/#guide">体验路径 <span>4 步</span></a></li>
+        <li><a href="/#faq">常见问答 <span>6 问</span></a></li>
+        <li><a href="/#comments">社区评论 <span>12 条</span></a></li>
+        <li><a href="/#news">相关资讯 <span>6 篇</span></a></li>
+        <li><a href="/#rank">热度榜单 <span>7 项</span></a></li>
+      </ul>
+    </div>
+
+    <div class="side-cta">
+      <b>订阅本周无人观察</b>
+      <p>每周一发送无人零售、自动配送与无人仓的条目更新与数据修正摘要。</p>
+      <a class="btn-primary" href="/#updates">查看本周更新</a>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="精选无人www 页尾标志">
+            <rect x="1.5" y="1.5" width="37" height="37" rx="11" fill="#0e8a7e"/>
+            <path d="M11 26.5V17.2c0-1.5 1.2-2.7 2.7-2.7h12.6c1.5 0 2.7 1.2 2.7 2.7v9.3" stroke="#c9f2ea" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <rect x="14.5" y="18.5" width="11" height="8" rx="1.6" fill="#0f1e26"/>
+            <circle cx="20" cy="10.6" r="2.3" fill="#e2653a"/>
+          </svg>
+          <b>精选无人www</b>
+        </div>
+        <p class="foot-desc">无人零售、自动配送与无人仓储的条目化观察站。用具体数据、类型标签与对照表，帮经营者判断一个无人项目是否值得投入。</p>
+      </div>
+      <div class="foot-col">
+        <h4>主要频道</h4>
+        <ul>
+          <li><a href="/#cats">无人便利店</a></li>
+          <li><a href="/#cats">自动配送站点</a></li>
+          <li><a href="/#cats">无人仓储</a></li>
+          <li><a href="/#cats">自助售货设备</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>内容栏目</h4>
+        <ul>
+          <li><a href="/#picks">精选条目</a></li>
+          <li><a href="/#updates">最新动态</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验路径</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>参与与说明</h4>
+        <ul>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">社区评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#rank">热度榜单</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 精选无人www · 条目内容与数据整理</span>
+      <span class="fb-links">
+        <a href="/#overview">领域概览</a>
+        <a href="/#cats">分类入口</a>
+        <a href="/#related">相关推荐</a>
+      </span>
+    </div>
+    <p class="foot-note">页面中的经营数据、热度与评分为条目示例信息，用于横向对照参考；设备与方案的实际表现受点位、客流与运维条件影响，投入前请以现场实测为准。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var navToggle = document.getElementById('navToggle');
+  var headNav = document.getElementById('headNav');
+  if(navToggle && headNav){
+    navToggle.addEventListener('click', function(){
+      var open = headNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.textContent = open ? '收起' : '菜单';
+    });
+    headNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 1024){
+        headNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
+        navToggle.textContent = '菜单';
+      }
+    });
+  }
+
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var result = document.getElementById('searchResult');
+  var searchable = Array.prototype.slice.call(document.querySelectorAll('.card, .cat-item, .update-list li, .news, .rank-box li'));
+
+  function clearMarks(){
+    searchable.forEach(function(el){ el.style.display = ''; });
+  }
+
+  function doSearch(){
+    var q = (input.value || '').trim().toLowerCase();
+    clearMarks();
+    if(!q){
+      result.classList.remove('show');
+      result.innerHTML = '';
+      return;
+    }
+    var hits = 0;
+    searchable.forEach(function(el){
+      var text = (el.textContent || '').toLowerCase();
+      if(text.indexOf(q) > -1){ hits++; } else { el.style.display = 'none'; }
+    });
+    result.classList.add('show');
+    if(hits === 0){
+      result.innerHTML = '未找到与「<b>' + escapeHtml(input.value.trim()) + '</b>」相关的条目，可尝试“无人便利店”“配送站点”“无人仓”“自助售货”等关键词。';
+    } else {
+      result.innerHTML = '已筛选出 <b>' + hits + '</b> 条与「' + escapeHtml(input.value.trim()) + '」相关的内容，清空搜索框可恢复完整列表。';
+    }
+  }
+
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  if(btn){ btn.addEventListener('click', doSearch); }
+  if(input){
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+    input.addEventListener('search', function(){
+      if(!input.value){ clearMarks(); result.classList.remove('show'); result.innerHTML=''; }
+    });
+  }
+})();
+</script>
+</body>
+                                    </html>
